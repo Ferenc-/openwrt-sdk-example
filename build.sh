@@ -6,9 +6,11 @@ ls -lah /tmp/amtc/src/
 
 # https://openwrt.org/docs/guide-developer/using_the_sdk
 
-docker pull rychly/openwrt-sdk:18.06.2-ar71xx
+export DOCKER_IMAGE="openwrtorg/sdk:ar71xx-generic-19.07.3" # Alternatively rychly/openwrt-sdk:18.06.2-ar71xx
 
-docker run --name openwrt-sdk -v ${PWD}:${PWD} -v /tmp/amtc:/tmp/amtc --workdir ${PWD} rychly/openwrt-sdk:18.06.2-ar71xx
+docker pull "${DOCKER_IMAGE}"
+
+docker run --name openwrt-sdk -v ${PWD}:${PWD} -v /tmp/amtc:/tmp/amtc --workdir ${PWD} "${DOCKER_IMAGE}"
 
 # Vim is needed for the xxd tool
 apk add vim git
