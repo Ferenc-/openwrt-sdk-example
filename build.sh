@@ -13,7 +13,8 @@ docker pull "${DOCKER_IMAGE}"
 docker run --name openwrt-sdk -v ${PWD}:${PWD} -v /tmp/amtc:/tmp/amtc --workdir ${PWD} "${DOCKER_IMAGE}"
 
 # Vim is needed for the xxd tool
-apk add vim git
+apt update
+apt install vim git
 
 cd $SDK_HOME
 ./scripts/feeds update -a
