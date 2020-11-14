@@ -6,7 +6,7 @@ ls -lah /tmp/amtc/src/
 
 # https://openwrt.org/docs/guide-developer/using_the_sdk
 
-export DOCKER_IMAGE="openwrtorg/sdk:ar71xx-generic-19.07.3" # Alternatively rychly/openwrt-sdk:18.06.2-ar71xx
+export DOCKER_IMAGE="openwrtorg/sdk:ar71xx-generic-19.07.4" # Alternatively rychly/openwrt-sdk:18.06.2-ar71xx
 
 docker pull "${DOCKER_IMAGE}"
 
