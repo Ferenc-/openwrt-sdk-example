@@ -40,8 +40,8 @@ endef
 #        $(TARGET_CC) $(TARGET_LDFLAGS) -o $(PKG_BUILD_DIR)/$1 $(PKG_BUILD_DIR)/amtc.o
 #endef
 define Build/Compile
-		$(TARGET_CC) $(TARGET_CFLAGS) -I /opt/openwrt-sdk-18.06.2-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64/staging_dir/target-mips_24kc_musl/usr/include/ -o $(PKG_BUILD_DIR)/amtc.o -c $(PKG_BUILD_DIR)/amtc.c
-		$(TARGET_CC) $(TARGET_LDFLAGS) -L /opt/openwrt-sdk-18.06.2-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64/staging_dir/target-mips_24kc_musl/usr/lib/ -lcurl -pthread -o $(PKG_BUILD_DIR)/$1 $(PKG_BUILD_DIR)/amtc.o
+		$(TARGET_CC) $(TARGET_CFLAGS) -I /home/build/openwrt/staging_dir/target-mips_24kc_musl/usr/include/ -o $(PKG_BUILD_DIR)/amtc.o -c $(PKG_BUILD_DIR)/amtc.c
+		$(TARGET_CC) $(TARGET_LDFLAGS) -L /home/build/openwrt/staging_dir/target-mips_24kc_musl/usr/lib/ -lcurl -pthread -o $(PKG_BUILD_DIR)/$1 $(PKG_BUILD_DIR)/amtc.o
 endef
 
 # Package install instructions; create a directory inside the package to hold our executable, and then copy the executable we built previously into the folder
